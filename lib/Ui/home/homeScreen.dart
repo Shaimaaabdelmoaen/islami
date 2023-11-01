@@ -16,9 +16,9 @@ class _HomeScreenState extends State<HomeScreen> {
   int selectTapIndex=0;
   List<Widget>taps=[
     quran(),
-    tasbeh(),
-    radio(),
     hadeth(),
+    radio(),
+    tasbeh(),
   ];
 
   @override
