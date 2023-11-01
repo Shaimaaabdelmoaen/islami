@@ -52,7 +52,7 @@ class _chapterDetailsScreenState extends State<chapterDetailsScreen> {
 
   void loadFile(int index) async {
     String fileContent =await rootBundle.loadString('assets/files/${index+1}.txt');
-    verses=fileContent.split("\n");
+    verses=fileContent.trim().split("\n");
     setState(() {
 
     });
