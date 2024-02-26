@@ -1,15 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:islami1/Ui/home/hadeth/hadethClass.dart';
+import 'package:islami1/Ui/myThemeData.dart';
+import 'package:islami1/provider/settingsProvider.dart';
+import 'package:provider/provider.dart';
 
 class HadethDetailsScreen extends StatelessWidget{
   static const String routName='HadethDetailsScreen';
   Widget build(BuildContext context) {
     var args=ModalRoute.of(context)?.settings.arguments as Hadeth;
+    var provider= Provider.of<settingsProvider>(context);
    return Container(
      decoration: BoxDecoration(
          image: DecorationImage(
-             image: AssetImage("assets/images/main_background.png"),
+             image: AssetImage(provider.getBackgroundImage()),
              fit: BoxFit.fill
          )
      ),
@@ -23,10 +27,7 @@ class HadethDetailsScreen extends StatelessWidget{
            child: Text(
              args.content,
              textAlign: TextAlign.center,
-             style: TextStyle(
-             fontSize: 28,
-
-           ),
+             style: Theme.of(context).textTheme.bodyMedium
            ),
          ),
        ),

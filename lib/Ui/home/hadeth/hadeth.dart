@@ -39,7 +39,7 @@ class _hadethState extends State<hadeth> {
                 return HadethTitleWidget(allAhadeth[index]);
               },
               separatorBuilder: (context,index)=>
-                  Container(color: Theme.of(context).primaryColor,
+                  Container(color: Theme.of(context).dividerColor,
                     width: double.infinity,
                     height: 2,
                     margin: EdgeInsets.symmetric(horizontal: 64),
