@@ -1,0 +1,14 @@
+{
+  "app_name": "اسلامى",
+  "quran": "القران",
+  "hadeth": "الحديث",
+  "tasbeh": "التسبيح",
+  "radio": "الاذاعة",
+  "hadeth_number": "رقم الحديث",
+  "chapter_name": "اسم السورة",
+  "settings": "الاعدادات",
+  "theme": "السمه",
+  "language": "اللغة",
+  "light": "نهارى",
+  "dark": "ليلى"
+}

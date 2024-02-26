@@ -2,6 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami1/Ui/chapterDetails/verseWidget.dart';
+import 'package:islami1/Ui/myThemeData.dart';
+import 'package:islami1/provider/settingsProvider.dart';
+import 'package:provider/provider.dart';
 
 class chapterDetailsScreen extends StatefulWidget{
   static const String routName='chapterDetailsScreen';
@@ -17,10 +20,11 @@ class _chapterDetailsScreenState extends State<chapterDetailsScreen> {
     if(verses.isEmpty){
       loadFile(args.index);
     }
+    var provider =Provider.of<settingsProvider>(context);
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/images/main_background.png"),
+              image: AssetImage(provider.getBackgroundImage()),
               fit: BoxFit.fill
           )
       ),
@@ -36,7 +40,7 @@ class _chapterDetailsScreenState extends State<chapterDetailsScreen> {
           },
             itemCount: verses.length,
             separatorBuilder: (context,index)=>
-                Container(color: Theme.of(context).primaryColor,
+                Container(color: Theme.of(context).dividerColor,
                   width: double.infinity,
                   height: 2,
                   margin: EdgeInsets.symmetric(horizontal: 64),
@@ -52,7 +56,7 @@ class _chapterDetailsScreenState extends State<chapterDetailsScreen> {
 
   void loadFile(int index) async {
     String fileContent =await rootBundle.loadString('assets/files/${index+1}.txt');
-    verses=fileContent.split("\n");
+    verses=fileContent.trim().split("\n");
     setState(() {
 
     });
